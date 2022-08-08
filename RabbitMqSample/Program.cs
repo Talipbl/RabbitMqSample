@@ -9,7 +9,7 @@ factory.HostName = "localhost";
 using (IConnection connection = factory.CreateConnection())
 using (IModel channel = connection.CreateModel())
 {
-    channel.QueueDeclare("ikincikuyruk",true,false,true);
+    channel.QueueDeclare("ikincikuyruk2",true,false,true);
     byte[] byteMessage = Encoding.UTF8.GetBytes("Bu bir RabbitMQ kuyruğunun ikinci mesajıdır!");
-    channel.BasicPublish(exchange: "", routingKey: "ikincikuyruk", body: byteMessage);
+    channel.BasicPublish(exchange: "", routingKey: "ikincikuyruk2", body: byteMessage);
 }
