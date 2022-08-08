@@ -8,9 +8,9 @@ factory.HostName = "localhost";
 using (IConnection connection = factory.CreateConnection())
 using (IModel channel = connection.CreateModel())
 {
-    channel.QueueDeclare("ikincikuyruk", true, false, true);
+    channel.QueueDeclare("ikincikuyruk2", true, false, true);
     EventingBasicConsumer consumer = new EventingBasicConsumer(channel);
-    channel.BasicConsume("ikincikuyruk", false, consumer);
+    channel.BasicConsume("ikincikuyruk2", false, consumer);
     consumer.Received += (sender, args) =>
     {
         var body = args.Body.Span;
